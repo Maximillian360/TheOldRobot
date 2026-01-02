@@ -21,7 +21,7 @@ public class Robot
         }
     }
     
-    public void PopulateCommands(RobotCommand[]? initialCommands)
+    public void PopulateCommands(RobotCommand[] initialCommands)
     {
         for (int i = 0; i < initialCommands.Length; i++)
         {

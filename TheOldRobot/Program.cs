@@ -6,7 +6,7 @@ Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome to OldRobot!");
 Robot robot = new Robot();
 int commandLimit = 3;
-RobotCommand?[] initialCommands = new RobotCommand?[commandLimit];
+RobotCommand[] initialCommands = new RobotCommand[commandLimit];
 while (true)
 {
     Console.WriteLine("START");
@@ -37,9 +37,9 @@ while (true)
             }
             var testCommand = robot.CommandFactory(checkCommand);
             initialCommands[i] = testCommand;
-            Console.WriteLine($"{initialCommands[i]}");
             invalidInput = false;
         }
     }
-    Console.WriteLine("END");
+    robot.PopulateCommands(initialCommands);
+    robot.Run();
 }
