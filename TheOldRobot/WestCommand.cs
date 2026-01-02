@@ -4,6 +4,9 @@ public class WestCommand : RobotCommand
 {
     public override void Run(Robot robot)
     {
-        robot.X -= 1;
+        if (robot.IsPowered == true)
+        {
+            robot.X -= 1;
+        }
     }
 }
