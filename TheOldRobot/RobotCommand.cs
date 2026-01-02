@@ -7,10 +7,10 @@ public abstract class RobotCommand
 
 public enum RobotCommandType
 {
-    On,
-    Off,
-    North,
-    East,
-    South,
-    West,
+    on,
+    off,
+    north,
+    east,
+    south,
+    west,
 }

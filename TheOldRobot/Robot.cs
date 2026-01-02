@@ -20,12 +20,28 @@ public class Robot
             Console.WriteLine($"[{X} {Y} {IsPowered}]");
         }
     }
-
-    public void PopulateCommands(RobotCommand?[] commands)
+    
+    public void PopulateCommands(RobotCommand[]? initialCommands)
     {
-        for (int i = 0; i < commands.Length; i++)
+        for (int i = 0; i < initialCommands.Length; i++)
         {
-            Commands[i] = commands[i];
+            Commands[i] = initialCommands[i];
         }
+    }
+
+    public RobotCommand CommandFactory(RobotCommandType command)
+    {
+        RobotCommand resultCommand = command switch
+        {
+            RobotCommandType.on => new OnCommand(),
+            RobotCommandType.off => new OffCommand(),
+            RobotCommandType.north => new NorthCommand(),
+            RobotCommandType.south => new SouthCommand(),
+            RobotCommandType.east => new EastCommand(),
+            RobotCommandType.west => new WestCommand(),
+            _ => new OffCommand()
+
+        };
+        return resultCommand; 
     }
 }
