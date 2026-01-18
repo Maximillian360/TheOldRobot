@@ -6,7 +6,7 @@ Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome to OldRobot!");
 Robot robot = new Robot();
 int commandLimit = 3;
-RobotCommand[] initialCommands = new RobotCommand[commandLimit];
+IRobotCommand[] initialCommands = new IRobotCommand[commandLimit];
 while (true)
 {
     Console.WriteLine("START");

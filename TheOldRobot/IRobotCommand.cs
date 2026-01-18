@@ -1,8 +1,8 @@
 namespace TheOldRobot;
 
-public abstract class RobotCommand
+public interface IRobotCommand
 {
-    public abstract void Run(Robot robot);
+    void Run(Robot robot);
 }
 
 public enum RobotCommandType
